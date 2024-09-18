@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Głosowanie - Budżet Obywatelski</title>
+    <title>Glosowanie - Budzet Obywatelski</title>
     <link rel="icon" type="image/png" href="ikona.png">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,35 +11,45 @@
 
     <div class="overlay">
         <div class="container">
-            <h1 class="heading">Głosowanie na Budżet Obywatelski</h1>
-            <p class="description">Zachęcamy do wzięcia udziału w głosowaniu na Budżet Obywatelski miasta Zduńska Wola!</p>
-            <p class="dates">Głosowanie trwa od <strong>30 września 2024</strong> do <strong>15 października 2024</strong>.</p>
-            <div id="countdown" class="countdown"></div>
-            <a href="link_do_glosowania.html" class="btn-vote">Głosuj teraz!</a>
+            <div class="text-background">
+                <h1 class="heading">Glosowanie na Budzet Obywatelski</h1>
+                <p class="description">Zachecamy do wziecia udzialu w glosowaniu na Budzet Obywatelski miasta Zdunska Wola!</p>
+                <p class="dates">Glosowanie trwa od <strong>30 wrzesnia 2024</strong> do <strong>15 pazdziernika 2024</strong>.</p>
+                <div id="countdown" class="countdown"></div>
+                <a href="link_do_glosowania.html" class="btn-vote">Glosuj teraz!</a>
+            </div>
         </div>
     </div>
 
     <script>
-        // Ustawienie daty końcowej głosowania
+        // Ustawienie daty poczatkowej glosowania
+        var startDate = new Date("September 30, 2024 00:00:00").getTime();
         var endDate = new Date("October 15, 2024 23:59:59").getTime();
 
-        // Aktualizowanie odliczania co 1 sekundę
+        // Aktualizowanie odliczania co 1 sekunde
         var x = setInterval(function() {
             var now = new Date().getTime();
-            var distance = endDate - now;
+            var distance;
+
+            // Sprawdzenie, czy głosowanie już rozpoczęte
+            if (now < startDate) {
+                distance = startDate - now;
+                document.getElementById("countdown").innerHTML = "Pozostalo do rozpoczecia glosowania: ";
+            } else if (now <= endDate) {
+                distance = endDate - now;
+                document.getElementById("countdown").innerHTML = "Pozostalo do zakonczenia glosowania: ";
+            } else {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "Glosowanie zakonczone!";
+                return;
+            }
 
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-            // Jeśli odliczanie zakończone, wyświetl komunikat
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "Głosowanie zakończone!";
-            }
+            document.getElementById("countdown").innerHTML += days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
         }, 1000);
     </script>
 
