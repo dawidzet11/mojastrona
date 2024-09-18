@@ -1,0 +1,85 @@
+/* Ogólny reset styli */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styl dla całego dokumentu */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Overlay na pełny ekran */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('home-2.jpg'); /* Wstaw tutaj swoją ścieżkę do obrazka */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Półprzezroczysta warstwa nad tłem */
+.overlay-darken {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Półprzezroczyste tło */
+    z-index: 2;
+}
+
+/* Container z tekstem powitalnym */
+.container-fluid {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    z-index: 3;
+    position: relative;
+}
+
+/* Styl dla nagłówka */
+h1.custom-name {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Tekst powitalny */
+.welcome_text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+
+/* Styl dla animacji */
+.slogan-wrapper {
+    animation: zoomIn 1s ease-in-out;
+}
+
+/* Dodanie animacji zoom */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
