@@ -24,7 +24,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('tlo.jpg'); /* Wstaw tutaj swoją ścieżkę do obrazka tła */
+    background-image: url('home-2.jpg'); /* Wstaw tutaj swoją ścieżkę do obrazka tła */
     background-size: cover;
     background-position: center;
     display: flex;
