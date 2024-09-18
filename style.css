@@ -1,4 +1,4 @@
-/* Ogólny reset styli */
+/* Resetowanie stylów */
 * {
     margin: 0;
     padding: 0;
@@ -7,13 +7,14 @@
 
 /* Styl dla całego dokumentu */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Upewnij się, że używasz fontu obsługującego polskie znaki */
     background-color: #f4f4f4;
     color: #333;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 /* Overlay na pełny ekran */
@@ -33,53 +34,50 @@ body {
 }
 
 /* Półprzezroczysta warstwa nad tłem */
-.overlay-darken {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Półprzezroczyste tło */
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Półprzezroczysty czarny */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
     z-index: 2;
 }
 
-/* Container z tekstem powitalnym */
-.container-fluid {
-    text-align: center;
-    color: #fff;
-    padding: 20px;
-    z-index: 3;
-    position: relative;
-}
-
-/* Styl dla nagłówka */
-h1.custom-name {
+/* Styl nagłówka */
+.heading {
     font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: bold;
-    text-transform: uppercase;
 }
 
-/* Tekst powitalny */
-.welcome_text {
+/* Opis i daty */
+.description {
     font-size: 1.2rem;
-    line-height: 1.8;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-/* Styl dla animacji */
-.slogan-wrapper {
-    animation: zoomIn 1s ease-in-out;
+.dates {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
-/* Dodanie animacji zoom */
-@keyframes zoomIn {
-    from {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+/* Styl odliczania */
+.countdown {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Styl dla przycisku */
+.btn-vote {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-vote:hover {
+    background-color: #ffaa00;
 }
