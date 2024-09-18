@@ -7,7 +7,7 @@
 
 /* Styl dla całego dokumentu */
 body {
-    font-family: Arial, sans-serif; /* Upewnij się, że używasz fontu obsługującego polskie znaki */
+    font-family: Calibri, sans-serif; /* Upewnij się, że używasz fontu obsługującego polskie znaki */
     background-color: #f4f4f4;
     color: #333;
     height: 100vh;
